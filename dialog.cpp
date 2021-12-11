@@ -76,6 +76,7 @@ void Dialog::OnReadReady()
             //保存消息并显示在界面上
             auto socketContent = m_clientSockets.at(i)->readAll();
             ui->listWidget->addItem(socketContent);
+            ui->listWidget->scrollToBottom();
             //发送给其他客户端
             SendMessage(socketContent);
         }
